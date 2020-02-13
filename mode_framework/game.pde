@@ -6,9 +6,13 @@ void game() {
   if (by >= height) {
     mode = GAMEOVER;
   }
-  rect(400, 30, 50, 50);
+  rect(385, 20, 30, 30);
+ 
 }
 void gameClicks() {
+  if (mouseX >= 385 && mouseX <= 415 && mouseY >= 20 && mouseY <= 50) {
+   mode = PAUSE; 
+  }
 }
 void ball() {
   ellipse(bx, by, 20, 20);
@@ -24,10 +28,9 @@ void ball() {
     bvx = (bx - px)/10;
     bvy = (by - py)/10;
   }
-  if (mouseX > 375 && mouseX < 425 && mouseY > 5 && mouseY < 55) {
-    mode = PAUSE;
+  
   }
-}
+
 void paddle() {
   ellipse(px, py, 100, 100);
   if (rightKey) px = px + 5;
