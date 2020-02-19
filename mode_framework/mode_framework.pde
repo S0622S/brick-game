@@ -1,3 +1,5 @@
+ArrayList<Brick> myBricks;
+
 final int INTRO = 1;
 final int GAME  = 2;
 final int GAMEOVER = 3;
@@ -9,6 +11,13 @@ boolean leftKey, rightKey, enter;
 
 void setup() {
   size(800, 600);
+
+  myBricks  = new ArrayList <Brick>();
+  int i = 0;
+  while (i < 1000) {
+   myBricks.add(new Brick() ); 
+    i = i + 1;
+  }
   bx = 400;
   by = 0;
   bvy = 3;

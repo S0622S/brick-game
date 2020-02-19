@@ -1,8 +1,8 @@
 void gameover() {
-  background(255,0,0);
+  background(255, 0, 0);
   if (by >= height - 20) {
-  by = 0;
-  bx = 400;                  
+    by = 0;
+    bx = 400;
   }
 }
 
