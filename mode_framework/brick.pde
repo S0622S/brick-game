@@ -1,22 +1,19 @@
-//1. Instance Variables
-//2. Constructer
-//3. Behavior 
 class Brick {
-  //1.Instance Variables
+
+  //1. Instance Variables
   float x, y;
   int hp;
-  color c;
+  color c; //should be colour
 
-  //2.Constructer
+  //2. Constructor
   Brick() {
-    x = random(0, width);
-    y = random(0, height);
+    x = gridx;
+    y = gridy;
     c = #ffffff;
-    hp = 1;
+    hp = (int)random(1,4);
   }
 
-
-
+  //3. Behaviour Functions
   void act() {
     if (hp > 0 && dist(x, y, bx, by) < 35) {
       hp = hp - 1;
@@ -26,7 +23,9 @@ class Brick {
   }
 
   void show() {
+   
     if (hp > 0) {
+      c=255/hp;
       fill(c);
       ellipse(x, y, 50, 50);
     }

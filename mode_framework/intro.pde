@@ -4,7 +4,6 @@ void intro() {
     mode = GAME;
   }
 }
-
 void introClicks() {
   mode = GAME;
 }
