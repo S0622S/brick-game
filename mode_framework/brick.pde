@@ -16,6 +16,7 @@ class Brick {
   //3. Behaviour Functions
   void act() {
     if (hp > 0 && dist(x, y, bx, by) < 35) {
+      
       hp = hp - 1;
       bvx = (bx - x)/5;
       bvy = (by - y)/5;
@@ -28,6 +29,13 @@ class Brick {
       c=255/hp;
       fill(c);
       ellipse(x, y, 50, 50);
+    }
+  }
+  
+  void checkScore(){
+    if(hp == 0){
+       score++;
+       hp--;
     }
   }
 }

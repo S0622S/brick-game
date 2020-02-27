@@ -1,31 +1,37 @@
-
 void game() {
   background(0, 0, 255);
   strokeWeight(0);
-  
+
   int i = 0;
   while (i < 36) {
     Brick b = myBricks.get(i);
     b.show();
     b.act();
-   i = i + 1; 
+    i = i + 1; 
+    b.checkScore();
   }
-  
+
+  //text("Scores: " + score, 400, 300);
+
   ball();
   paddle();
   if (by >= height) {
     mode = GAMEOVER;
   }
   //pause button
-    strokeWeight(1);
+  strokeWeight(1);
   rect(385, 20, 30, 30);
+
+  if (score == 36) {
+    mode=WIN;
+  }
 }
+
 void gameClicks() {
   //pause button setting
   if (mouseX >= 385 && mouseX <= 415 && mouseY >= 20 && mouseY <= 50) {
     mode = PAUSE;
   }
-  
 }
 void ball() {
   fill(255);
@@ -38,7 +44,7 @@ void ball() {
   if (by <= 0 || by >= height ) {
     bvy = -bvy;
   }
-  if (dist(bx, by, px, py)<= 60) {
+  if (dist(bx, by, px, py) <= 60) {
     bvx = (bx - px)/10;
     bvy = (by - py)/10;
   }
@@ -47,12 +53,12 @@ void ball() {
 void paddle() {
   fill(255);
   ellipse(px, py, 100, 100);
-  if (rightKey) px = px + 5;
-  if (leftKey) px = px - 5;
+  if (rightKey) px = px + 7;
+  if (leftKey) px = px - 7;
   if (px <= 40) {
-   px = 40; 
+    px = 40;
   }
   if (px >= 760) {
-   px =  760;
+    px =  760;
   }
 }
