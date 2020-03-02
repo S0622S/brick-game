@@ -9,9 +9,15 @@ void game() {
     b.act();
     i = i + 1; 
     b.checkScore();
+    
+    stroke(0);
+    fill(100);
+    rect(700, 300, 100, 50);
+    fill(0);
+    textSize(20);
+    text("Scores: " + score, 705, 330);
   }
 
-  //text("Scores: " + score, 400, 300);
 
   ball();
   paddle();
@@ -33,32 +39,36 @@ void gameClicks() {
     mode = PAUSE;
   }
 }
+float diameter1 = 20;
 void ball() {
   fill(255);
-  ellipse(bx, by, 20, 20);
+  ellipse(bx, by, diameter1, diameter1);
   bx = bx + bvx;
   by = by + bvy;
-  if (bx <= 10 || bx >= width - 10) {
+  if (bx <= 10 || bx >= width - diameter1 / 2) {
     bvx = -bvx;
   }
-  if (by <= 0 || by >= height ) {
+  if (by <= diameter1 / 2 || by >= height ) {
     bvy = -bvy;
   }
-  if (dist(bx, by, px, py) <= 60) {
+  if (dist(bx, by, px, py) <= diameter2 / 2 + 10) {
     bvx = (bx - px)/10;
     bvy = (by - py)/10;
   }
 }
 
+float diameter2 = 100;
 void paddle() {
+  stroke(0);
+  strokeWeight(3);
   fill(255);
-  ellipse(px, py, 100, 100);
+  ellipse(px, py, diameter2, diameter2);
   if (rightKey) px = px + 7;
   if (leftKey) px = px - 7;
-  if (px <= 40) {
-    px = 40;
+  if (px <= diameter2 / 2) {
+    px = 50;
   }
-  if (px >= 760) {
-    px =  760;
+  if (px >= 800 - diameter2 / 2) {
+    px =  750;
   }
 }

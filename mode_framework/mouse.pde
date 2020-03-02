@@ -11,6 +11,8 @@ void mouseReleased() {
     winClicks();
   } else if (mode == PAUSE) {
     pauseClicks();
+  } else if (mode == SETTING) {
+    settingClicks();
   } else {
      println("Mode error");
   }

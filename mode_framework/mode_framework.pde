@@ -1,5 +1,4 @@
 ArrayList<Brick> myBricks;
-
 final int INTRO = 1;
 final int SETTING = 2;
 final int GAME  = 3;
