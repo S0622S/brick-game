@@ -38,6 +38,8 @@ void setup() {
     px = width/ 2;
     py = height;
   }
+  
+  score = 0;
 }
 
   void draw() {

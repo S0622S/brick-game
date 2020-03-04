@@ -1,9 +1,10 @@
 void win() {
-  background(0);
+  background(#FEFF1F);
   
 }
 
 void winClicks() {
-  
+  mode = INTRO;
+  setup();
   
 }

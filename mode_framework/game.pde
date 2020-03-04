@@ -28,7 +28,7 @@ void game() {
   strokeWeight(1);
   rect(385, 20, 30, 30);
 
-  if (score == 36) {
+  if (score == 1) {
     mode=WIN;
   }
 }
@@ -66,9 +66,9 @@ void paddle() {
   if (rightKey) px = px + 7;
   if (leftKey) px = px - 7;
   if (px <= diameter2 / 2) {
-    px = 50;
+    px = diameter2 / 2;
   }
   if (px >= 800 - diameter2 / 2) {
-    px =  750;
+    px =  800 - diameter2 / 2;
   }
 }
