@@ -38,6 +38,10 @@ void setup() {
     px = width/ 2;
     py = height;
   }
+ 
+   gear = loadImage("gear.png");
+   arrow = loadImage("arrow.png");
+  
   
   score = 0;
 }

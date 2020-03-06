@@ -1,4 +1,5 @@
 void game() {
+  frameRate(60);
   background(0, 0, 255);
   strokeWeight(0);
 
@@ -28,7 +29,7 @@ void game() {
   strokeWeight(1);
   rect(385, 20, 30, 30);
 
-  if (score == 1) {
+  if (score == 36) {
     mode=WIN;
   }
 }
@@ -45,9 +46,18 @@ void ball() {
   ellipse(bx, by, diameter1, diameter1);
   bx = bx + bvx;
   by = by + bvy;
-  if (bx <= 10 || bx >= width - diameter1 / 2) {
+  boolean hehe = false;
+  if (bx <= diameter1 / 2|| bx >= width - diameter1 / 2) {
+    if(!hehe){
+    hehe=true;
     bvx = -bvx;
+    }
   }
+  
+  if(bx > diameter1 / 2 || bx > width - diameter1 / 2){
+   hehe=false; 
+  }
+  
   if (by <= diameter1 / 2 || by >= height ) {
     bvy = -bvy;
   }
